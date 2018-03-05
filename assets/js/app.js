@@ -15,7 +15,7 @@ AppManager.init = function(){
 
       firebase.auth().onAuthStateChanged(function(user) {
 
-        debugger;
+       // debugger;
 
         if (user) {
 
