@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Products</h1>
+  
+  {{ content }}
+
+    {% for product in site.products %}
+
+      <div class="col-md-2 column productbox">
+          <img src="/assets/img/products/{{product.image}}" class="img-responsive">
+          {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+          <span class="post-meta">{{ product.date | date: date_format }}</span>
+          <div class="producttitle">{{ product.title | escape }}</div>
+          <div class="productprice">
+            <div class="pull-right">
+              <a href="{{ product.url | relative_url }}" class="btn btn-danger btn-sm" role="button">BUY</a>
+            </div>
+            <div class="pricetext">£8.95</div></div>
+      </div>
+
+    {% endfor %}
+
+
+</div>

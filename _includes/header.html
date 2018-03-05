@@ -1,0 +1,76 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand">FE Demo App</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="catalog">Catalog <span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="catalog">
+            {% for post in site.products %}
+            <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li>
+            <a href="/posts">Blog</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="loginmenu" href="/account/login" >Login/Signup</a></li>
+        <li><a id="user"></a></li>
+        <li><a href=# id="logout">Logout</a></li>
+        <li><a href="http://google.com" target="_blank">Help</a></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<script>
+    $(function(){
+
+      $("#logout").on("click", function(){      
+				AppManager.logout(function(err){
+					if(err){
+						$("#error").text(err.message);
+					}else{
+						location.href = "/";
+					}
+				});
+			});
+
+
+      $("#logout").hide();
+      $("#user").hide();
+
+      AppManager.userLoggedCallback=function(user){
+
+        if(user){          
+          AppManager.onUserUpdated(user.uid, function(updatedUser){
+            if(updatedUser){
+              console.log(updatedUser);
+              $("#loginmenu").hide();
+              $("#logout").show();
+              $("#user").show();
+              $("#user").html(updatedUser.username);
+            }
+          });
+        }else{
+          //alert("User not found");
+        }
+      }
+      
+    });
+</script>
