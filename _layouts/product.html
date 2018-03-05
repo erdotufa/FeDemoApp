@@ -30,7 +30,7 @@ layout: default
     data-item-name="{{page.title}}"
     data-item-price="{{page.price}}"
     data-item-weight="0"
-    data-item-url="{{page.url}}"
+    data-item-url="{{page.url | absolute_url}}"
     data-item-description="{{page.summary}}">
     Buy bacon
 </button>
