@@ -76,7 +76,8 @@ margin-bottom:10px;
 
 .producttitle {
   font-weight:bold;
-padding:5px 0 5px 0;
+  height: 70px;
+  padding:5px 0 5px 0;
 }
 
 .productprice {
@@ -87,4 +88,9 @@ padding-top:5px;
 .pricetext {
 font-weight:bold;
 font-size:1.4em;
+}
+
+.img-responsive {
+  height: 220px;
+  width: 300px;
 }

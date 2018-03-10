@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "Quote"
+date:   2018-03-04 09:15:33 +0100
+categories: jekyll update
+---
+
+```
+This paragraph has a quote
+
+> That is pulled out like this
+
+from the text my post.
+```
+
+This paragraph has a quote
+
+> That is pulled out like this
+
+from the text my post.
