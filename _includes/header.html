@@ -80,9 +80,6 @@
           AppManager.onUserUpdated(user.uid, function(updatedUser){
             if(updatedUser){
               console.log(updatedUser);
-              $("#loginmenu").hide();
-              $("#logout").show();
-              $("#user").show();
               $("#user").html(updatedUser.username);
             }
           });
