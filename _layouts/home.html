@@ -20,7 +20,18 @@ layout: default
           </div>
           <div class="productprice">
             <div class="pull-right">
-              <a href="{{ product.url | relative_url }}" class="btn btn-danger btn-sm" role="button">BUY</a>
+              <button href="#"
+                class="snipcart-add-item"
+                data-item-id="{{product.id}}"
+                data-item-name="{{product.title}}"
+                data-item-price="{{product.price}}"
+                data-item-weight="0"
+                data-item-url="{{product.url | absolute_url}}"
+                data-item-description="{{product.summary}}">
+                Buy
+              </button>
+<!-- 
+              <a href="{{ product.url | relative_url }}" class="btn btn-danger btn-sm" role="button">BUY</a> -->
             </div>
             <div class="pricetext">€{{ product.price }}</div></div>
       </div>

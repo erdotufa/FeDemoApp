@@ -3,7 +3,7 @@ layout: product
 title: 'Clean Architecture'
 image: 'cleanarchitecture.jpg'
 price: 28.03
-tags: red,red,red
+tags: architecture,clean code
 vendor: "Amazon"
 vendor_link: "https://www.amazon.it/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164/ref=sr_1_1?s=english-books&ie=UTF8&qid=1520674852&sr=1-1&keywords=clean+architecture"
 summary: "A Craftsman's Guide to Software Structure and Design"

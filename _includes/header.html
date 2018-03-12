@@ -69,7 +69,14 @@
 
       AppManager.userLoggedCallback=function(user){
 
-        if(user){          
+        if(user){
+          
+          $("#loginmenu").hide();
+          $("#logout").show();
+          $("#user").show();
+          $("#user").html(user.username);
+
+
           AppManager.onUserUpdated(user.uid, function(updatedUser){
             if(updatedUser){
               console.log(updatedUser);
