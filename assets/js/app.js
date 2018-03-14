@@ -31,7 +31,7 @@ AppManager.init = function(){
 AppManager.onUserUpdated = function(userId, next){
   //var usernameRef = firebase.database().ref('users/' + userId + '/username');
   var userRef = firebase.database().ref('users/' + userId);
-  // userRef.onnce(
+  // userRef.onOnce(
   userRef.on('value', function(snapshot) {
     next(snapshot.val());
   });
@@ -45,7 +45,7 @@ AppManager.createUser = function(name, email, password, next){
       if(error){
         next(error.message, null);
       }else{
-        AppManager.saveUser(user.uid, name, email, function(error, data){
+        AppManager.saveUser(user.uid, name, email, "local", function(error, data){
           if(error){
             next(error.message, null);
           }else{
@@ -67,10 +67,11 @@ AppManager.createUser = function(name, email, password, next){
 
 };
 
-AppManager.saveUser = function(userId, name, email, next){
+AppManager.saveUser = function(userId, name, email, type, next){
   firebase.database().ref('users/' + userId).set({
     username: name,
     email: email,
+    type: type
   }).then(function(result){
     next(null, result);
   }).catch(function(error) {
@@ -101,7 +102,7 @@ AppManager.loginGithub = function(next){
     // The signed-in user info.
     var user = result.user;
 
-    AppManager.saveUser(user.uid, user.email, user.email, function(error, data){
+    AppManager.saveUser(user.uid, user.email, user.email, "github", function(error, data){
       if(error){
         next(error.message, null);
       }else{
@@ -121,10 +122,6 @@ AppManager.loginGithub = function(next){
 
 
 };
-
-// AppManager.getCurrentUser = function(){
-//   return firebase.auth().currentUser;
-// }
 
 AppManager.logout = function(next){
   firebase.auth().signOut().then(function() {
