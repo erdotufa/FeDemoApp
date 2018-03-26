@@ -3,12 +3,12 @@ AppManager = {};
 AppManager.init = function(){
 
     var config = {
-        apiKey: "AIzaSyD00hvSWEo3VSW3-GbWF6-1HdNFxAokozw",
-        authDomain: "fe-demo-app.firebaseapp.com",
-        databaseURL: "https://fe-demo-app.firebaseio.com",
-        projectId: "fe-demo-app",
-        storageBucket: "fe-demo-app.appspot.com",
-        messagingSenderId: "275291743756"
+        apiKey: "",
+        authDomain: "",
+        databaseURL: "",
+        projectId: "",
+        storageBucket: "",
+        messagingSenderId: ""
       };
 
       firebase.initializeApp(config);
