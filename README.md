@@ -13,9 +13,9 @@ App creata per la presentazione al gruppo FrontEnders Ticino Marzo 2018
 
 ## Installazione
 
-Installare [Jekyll](https://jekyllrb.com/) 
-Creare un app [Firebase](https://firebase.google.com/) 
-Sostituire in assets/js/app.js la parte di config con quella copiata da firebase
+- Installare [Jekyll](https://jekyllrb.com/) 
+- Creare un app [Firebase](https://firebase.google.com/) 
+- Sostituire in assets/js/app.js la parte di config con quella copiata da firebase
 
 ```js
     var config = {
@@ -28,8 +28,8 @@ Sostituire in assets/js/app.js la parte di config con quella copiata da firebase
       };
 ```
 
-Creare un account di test su [Snipcart](https://snipcart.com)
-Nel file _includes/head.html inserire la chiave di snipcart
+- Creare un account di test su [Snipcart](https://snipcart.com)
+- Nel file _includes/head.html inserire la chiave di snipcart
 
 ```js
  data-api-key="YourKey"
