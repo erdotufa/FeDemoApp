@@ -6,9 +6,9 @@ App creata per la presentazione al gruppo FrontEnders Ticino Marzo 2018
 
 ## Dipendenze
 
-Jekyllrb
-Snipcart 
-Firebase
+- Jekyllrb
+- Snipcart 
+- Firebase
 
 
 ## Installazione
