@@ -11,7 +11,7 @@ layout: default
     {% for product in site.products %}
 
       <div class="col-md-2 column productbox">
-          <img src="/assets/img/products/{{product.image}}" class="img-responsive">
+          <img src="{{ "/assets/img/products/" | product.image | absolute_url}}" class="img-responsive">
           {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
           <span class="post-meta">{{ product.date | date: date_format }}</span>
           <!-- <div class="producttitle">{{ product.title | escape }}</div> -->
